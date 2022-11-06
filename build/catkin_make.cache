@@ -1,0 +1,2 @@
+abot_description
+-DCATKIN_DEVEL_PREFIX=/home/parallels/ros/devel -DCMAKE_INSTALL_PREFIX=/home/parallels/ros/install -G Unix Makefiles
