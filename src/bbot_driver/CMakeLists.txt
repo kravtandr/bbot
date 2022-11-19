@@ -206,3 +206,5 @@ include_directories(
 
 add_executable(dc_motors src/dc_motors.cpp)
 target_link_libraries(dc_motors ${catkin_LIBRARIES} -lwiringPi -lpthread -lcrypt -lm -lrt -lGpioExpanderPi)
+add_executable(encoders src/encoders.cpp)
+target_link_libraries(encoders ${catkin_LIBRARIES} -lwiringPi -lpthread -lcrypt -lm -lrt)
