@@ -6,7 +6,7 @@
 #include <wiringPi.h>
 #include <softPwm.h>
 //#include <GpioExpanderPi.h>
-constexpr uint16_t RPI_MAX_PWM_VALUE = 10.23;
+constexpr uint16_t RPI_MAX_PWM_VALUE = 1023;
 
 class DCMotorWiringPi {
 public:
