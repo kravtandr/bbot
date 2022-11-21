@@ -1,5 +1,5 @@
 <launch>
-	<node pkg="gmapping" type="slam_gmapping" name="abot_slam_gmapping" output="screen">
-		<rosparam command="load" file="$(find abot_slam)/config/gmapping_params.yaml" />
+	<node pkg="gmapping" type="slam_gmapping" name="bbot_slam_gmapping" output="screen">
+		<rosparam command="load" file="$(find bbot_slam)/config/gmapping_params.yaml" />
 	</node>
 </launch>

@@ -4,6 +4,9 @@
 	<version>0.0.0</version>
 	<description>The bbot_slam package</description>
 
+	<maintainer email="kravtandr@gmail.com">kravtandr</maintainer>
+	<license>TODO</license>
+
 	<buildtool_depend>catkin</buildtool_depend>
 
     <build_depend>sensor_msgs</build_depend>
