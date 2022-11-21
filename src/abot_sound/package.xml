@@ -3,7 +3,7 @@
 	<version>0.0.0</version>
 	<description>The abot_sound meta package</description>
 
-	<maintainer email="gabbapeople@amperka.ru">gabbapeople</maintainer>
+	<maintainer email="kravtandr@gmail.com">kravtandr</maintainer>
 	<license>TODO</license>
 
 	<buildtool_depend>catkin</buildtool_depend>
