@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.0.2)
-project(abot_slam)
+project(bbot_slam)
 
 find_package(catkin REQUIRED COMPONENTS
   sensor_msgs
