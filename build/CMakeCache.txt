@@ -385,6 +385,12 @@ abot_description_BINARY_DIR:STATIC=/home/parallels/ros/build/abot_description
 //Value Computed by CMake
 abot_description_SOURCE_DIR:STATIC=/home/parallels/ros/src/abot_description
 
+//Value Computed by CMake
+abot_slam_BINARY_DIR:STATIC=/home/parallels/ros/build/abot_slam
+
+//Value Computed by CMake
+abot_slam_SOURCE_DIR:STATIC=/home/parallels/ros/src/abot_slam
+
 //The directory containing a CMake configuration file for actionlib.
 actionlib_DIR:PATH=/opt/ros/noetic/share/actionlib/cmake
 
@@ -420,6 +426,9 @@ genpy_DIR:PATH=/opt/ros/noetic/share/genpy/cmake
 
 //The directory containing a CMake configuration file for geometry_msgs.
 geometry_msgs_DIR:PATH=/opt/ros/noetic/share/geometry_msgs/cmake
+
+//The directory containing a CMake configuration file for gmapping.
+gmapping_DIR:PATH=/opt/ros/noetic/share/gmapping/cmake
 
 //Value Computed by CMake
 gmock_BINARY_DIR:STATIC=/home/parallels/ros/build/gtest/googlemock
@@ -720,7 +729,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=5
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=6
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP
