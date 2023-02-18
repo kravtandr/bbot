@@ -1,0 +1,8 @@
+prefix=/home/parallels/ros/devel
+
+Name: abot_navigation
+Description: Description of abot_navigation
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

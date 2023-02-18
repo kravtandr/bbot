@@ -131,6 +131,7 @@ endif()
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("/home/parallels/ros/build/gtest/cmake_install.cmake")
+  include("/home/parallels/ros/build/abot_navigation/cmake_install.cmake")
   include("/home/parallels/ros/build/abot_slam/cmake_install.cmake")
   include("/home/parallels/ros/build/abot_description/cmake_install.cmake")
 
