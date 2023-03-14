@@ -122,6 +122,8 @@ Visualization Manager:
         All Enabled: false
         abot_base:
           Value: true
+        abot_caster_wheel:
+          Value: true
         abot_fake_map/map:
           Value: true
         abot_left_wheel:
