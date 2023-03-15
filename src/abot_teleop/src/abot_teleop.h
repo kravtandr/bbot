@@ -5,11 +5,12 @@
 #include <ros/ros.h>
 #include <sensor_msgs/Joy.h>
 
-constexpr uint8_t PS4_AXIS_STICK_LEFT_LEFTWARDS = 0;
-constexpr uint8_t PS4_AXIS_STICK_LEFT_UPWARDS = 1;
-constexpr uint8_t PS4_AXIS_STICK_RIGHT_LEFTWARDS = 2;
-constexpr uint8_t PS4_AXIS_STICK_RIGHT_UPWARDS = 3;
-
+constexpr uint8_t XBOX_AXIS_STICK_LEFT_LEFTWARDS = 0;
+constexpr uint8_t XBOX_AXIS_STICK_LEFT_UPWARDS = 1;
+constexpr uint8_t XBOX_AXIS_STICK_RIGHT_LEFTWARDS = 2;
+constexpr uint8_t XBOX_AXIS_STICK_RIGHT_UPWARDS = 3;
+constexpr uint8_t XBOX_AXIS_RT = 4;
+constexpr uint8_t XBOX_AXIS_LT = 5;
 class AbotTeleop {
 public:
 	AbotTeleop(ros::NodeHandle private_node);
@@ -39,9 +40,12 @@ AbotTeleop::AbotTeleop(ros::NodeHandle private_node)
 void AbotTeleop::joyCallback(const sensor_msgs::Joy::ConstPtr& joy) {
 	geometry_msgs::Twist twist;
 
-	double twist_linear_x_vel = _linear_speed_scale * joy->axes[PS4_AXIS_STICK_LEFT_UPWARDS];
-	double twist_angular_z_vel = _angular_speed_scale * joy->axes[PS4_AXIS_STICK_RIGHT_LEFTWARDS];
-
+	//double twist_linear_x_vel = _linear_speed_scale * joy->axes[XBOX_AXIS_STICK_LEFT_UPWARDS];
+	double twist_angular_z_vel = _angular_speed_scale * joy->axes[XBOX_AXIS_STICK_RIGHT_LEFTWARDS];
+	double twist_linear_x_vel = _linear_speed_scale *(joy->axes[XBOX_AXIS_RT]-joy->axes[XBOX_AXIS_LT]);
+	ROS_INFO("GAZ %d", twist_linear_x_vel);
+	ROS_INFO("ANGLE %d", twist_angular_z_vel);
+	
 	twist.linear.x = twist_linear_x_vel;
 	twist.angular.z = twist_angular_z_vel;
 
