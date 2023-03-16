@@ -1,7 +1,7 @@
 <launch>
-	<arg name="addr" default="" />
+	<!-- <arg name="addr" default="" />
 	<arg name="use_standard_msgs" default="true" />
-	<arg name="autorepeat_rate" default="50" if="$(arg use_standard_msgs)" />
+	<arg name="autorepeat_rate" default="50" if="$(arg use_standard_msgs)" /> -->
 	<!-- <node pkg="ds4_driver" type="ds4_driver_node.py" name="ds4_driver" output="screen" >
 		<param name="device_addr" value="$(arg addr)" />
 		<param name="use_standard_msgs" value="$(arg use_standard_msgs)" />

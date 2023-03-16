@@ -43,8 +43,8 @@ void AbotTeleop::joyCallback(const sensor_msgs::Joy::ConstPtr& joy) {
 	//double twist_linear_x_vel = _linear_speed_scale * joy->axes[XBOX_AXIS_STICK_LEFT_UPWARDS];
 	double twist_angular_z_vel = _angular_speed_scale * joy->axes[XBOX_AXIS_STICK_RIGHT_LEFTWARDS];
 	double twist_linear_x_vel = _linear_speed_scale *(joy->axes[XBOX_AXIS_RT]-joy->axes[XBOX_AXIS_LT]);
-	ROS_INFO("GAZ %f", twist_linear_x_vel);
-	ROS_INFO("ANGLE %f", twist_angular_z_vel);
+	ROS_DEBUG("GAZ %f", twist_linear_x_vel);
+	ROS_DEBUG("ANGLE %f", twist_angular_z_vel);
 	
 	twist.linear.x = twist_linear_x_vel;
 	twist.angular.z = twist_angular_z_vel;
