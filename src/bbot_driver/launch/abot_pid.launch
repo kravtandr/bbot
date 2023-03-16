@@ -5,10 +5,10 @@
         <param name="Ki" value="-2.0" />
         <param name="Kd" value="0.0" />
         <param name="upper_limit" value="10.23" />
-        <param name="lower_limit" value="-10.23" />
+        <param name="lower_limit" value="-5.23" />
         <param name="windup_limit" value="10.23" />
-        <param name="max_loop_frequency" value="200.0" />
-        <param name="min_loop_frequency" value="200.0" />
+        <param name="max_loop_frequency" value="100.0" />
+        <param name="min_loop_frequency" value="100.0" />
         <remap from="/abot/left_wheel/setpoint" to="/abot/left_wheel/target_velocity" />
         <remap from="/abot/left_wheel/state" to="/abot/left_wheel/current_velocity" />
         <remap from="/abot/left_wheel/control_effort" to="/abot/left_wheel/pwm" />
@@ -20,10 +20,10 @@
         <param name="Ki" value="-2.0" />
         <param name="Kd" value="0.0" />
         <param name="upper_limit" value="10.23" />
-        <param name="lower_limit" value="-10.23" />
+        <param name="lower_limit" value="-5.23" />
         <param name="windup_limit" value="10.23" />
-        <param name="max_loop_frequency" value="200.0" />
-        <param name="min_loop_frequency" value="200.0" />
+        <param name="max_loop_frequency" value="100.0" />
+        <param name="min_loop_frequency" value="100.0" />
         <remap from="/abot/right_wheel/setpoint" to="/abot/right_wheel/target_velocity" />
         <remap from="/abot/right_wheel/state" to="/abot/right_wheel/current_velocity" />
         <remap from="/abot/right_wheel/control_effort" to="/abot/right_wheel/pwm" />
