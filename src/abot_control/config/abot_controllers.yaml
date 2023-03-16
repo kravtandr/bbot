@@ -18,6 +18,7 @@ mobile_abot:
     x:
       has_velocity_limits : true
       max_velocity : 0.6 # m/s 0.6 
+      min_velocity : -0.2 # m/s
       has_acceleration_limits: true
       max_acceleration : 6.0 # m/s^2 6.0
   angular:
