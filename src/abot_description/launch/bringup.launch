@@ -5,5 +5,5 @@
 	<include file="$(find abot_base)/launch/abot_base.launch" />
 	<include file="$(find abot_control)/launch/abot_control.launch" />
 	<include file="$(find bbot_driver)/launch/abot_drivers.launch" />
-	<include file="$(find abot_teleop)/launch/abot_teleop.launch" />
+	<!-- <include file="$(find abot_teleop)/launch/abot_teleop.launch" /> -->
 </launch>
