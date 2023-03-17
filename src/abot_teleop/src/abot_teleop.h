@@ -50,7 +50,7 @@ void AbotTeleop::joyCallback(const sensor_msgs::Joy::ConstPtr& joy) {
 	twist.angular.z = twist_angular_z_vel;
 
 	if (joy->buttons[5] == 1){
-		twist.linear.x = 0.6;
+		twist.linear.x = 1;
 	}
 
 	if (twist_linear_x_vel == 0 && twist_angular_z_vel == 0) {
