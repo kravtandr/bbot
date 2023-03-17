@@ -1,0 +1,8 @@
+prefix=/home/parallels/ros/devel
+
+Name: bbot_slam
+Description: Description of bbot_slam
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

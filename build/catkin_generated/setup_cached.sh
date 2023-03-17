@@ -7,8 +7,4 @@
 # new environment variables
 
 # modified environment variables
-export CMAKE_PREFIX_PATH="/home/parallels/ros/devel:$CMAKE_PREFIX_PATH"
-export LD_LIBRARY_PATH="/home/parallels/ros/devel/lib:$LD_LIBRARY_PATH"
 export PWD='/home/parallels/ros/build'
-export ROSLISP_PACKAGE_DIRECTORIES='/home/parallels/ros/devel/share/common-lisp'
-export ROS_PACKAGE_PATH="/home/parallels/ros/src:$ROS_PACKAGE_PATH"

@@ -1,0 +1,8 @@
+prefix=/home/parallels/ros/devel
+
+Name: abot_text_to_speech
+Description: Description of abot_text_to_speech
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 
