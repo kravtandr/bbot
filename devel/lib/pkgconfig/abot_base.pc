@@ -1,0 +1,8 @@
+prefix=/home/parallels/ros/devel
+
+Name: abot_base
+Description: Description of abot_base
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: controller_manager roscpp hardware_interface
