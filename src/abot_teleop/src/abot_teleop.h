@@ -11,6 +11,8 @@ constexpr uint8_t XBOX_AXIS_STICK_RIGHT_LEFTWARDS = 2;
 constexpr uint8_t XBOX_AXIS_STICK_RIGHT_UPWARDS = 3;
 constexpr uint8_t XBOX_AXIS_RT = 4;
 constexpr uint8_t XBOX_AXIS_LT = 5;
+constexpr uint8_t XBOX_BUTTON_RB = 7;
+
 class AbotTeleop {
 public:
 	AbotTeleop(ros::NodeHandle private_node);
@@ -49,7 +51,7 @@ void AbotTeleop::joyCallback(const sensor_msgs::Joy::ConstPtr& joy) {
 	twist.linear.x = twist_linear_x_vel;
 	twist.angular.z = twist_angular_z_vel;
 
-	if (joy->buttons[5] == 1){
+	if (joy->buttons[XBOX_BUTTON_RB] == 1){
 		twist.linear.x = 1;
 	}
 
