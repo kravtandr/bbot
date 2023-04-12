@@ -1,2 +1,2 @@
 abot_description:abot_navigation:abot_slam
--DCATKIN_DEVEL_PREFIX=/home/parallels/ros/devel -DCMAKE_INSTALL_PREFIX=/home/parallels/ros/install -G Unix Makefiles
+-DCATKIN_DEVEL_PREFIX=/home/kravtandr/ros/devel -DCMAKE_INSTALL_PREFIX=/home/kravtandr/ros/install -G Unix Makefiles

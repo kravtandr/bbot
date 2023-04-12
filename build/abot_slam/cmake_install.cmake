@@ -1,8 +1,8 @@
-# Install script for directory: /home/parallels/ros/src/abot_slam
+# Install script for directory: /home/kravtandr/ros/src/abot_slam
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/parallels/ros/install")
+  set(CMAKE_INSTALL_PREFIX "/home/kravtandr/ros/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -38,17 +38,17 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/parallels/ros/build/abot_slam/catkin_generated/installspace/abot_slam.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/kravtandr/ros/build/abot_slam/catkin_generated/installspace/abot_slam.pc")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/abot_slam/cmake" TYPE FILE FILES
-    "/home/parallels/ros/build/abot_slam/catkin_generated/installspace/abot_slamConfig.cmake"
-    "/home/parallels/ros/build/abot_slam/catkin_generated/installspace/abot_slamConfig-version.cmake"
+    "/home/kravtandr/ros/build/abot_slam/catkin_generated/installspace/abot_slamConfig.cmake"
+    "/home/kravtandr/ros/build/abot_slam/catkin_generated/installspace/abot_slamConfig-version.cmake"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/abot_slam" TYPE FILE FILES "/home/parallels/ros/src/abot_slam/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/abot_slam" TYPE FILE FILES "/home/kravtandr/ros/src/abot_slam/package.xml")
 endif()
 

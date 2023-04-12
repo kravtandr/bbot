@@ -1,0 +1,81 @@
+# build binary
+FROM ros:noetic-ros-core AS build
+
+ARG UID=1000
+ARG GID=1000
+# ENV DEBIAN_FRONTEND=noninteractive
+
+RUN apt-get update && apt-get install -y git
+# RUN apk --no-cache add curl
+RUN apt-get install -y python3-rosdep python3-rosinstall python3-rosinstall-generator python3-wstool build-essential
+RUN apt-get install -y ros-noetic-joint-state-publisher-gui net-tools
+RUN apt-get install -y ros-noetic-pid ros-noetic-joy xboxdrv
+RUN apt-get install -y ros-noetic-gmapping ros-noetic-joy ros-noetic-map-server ros-noetic-navigation
+
+RUN apt-get update && apt-get install -y \
+ wget \
+ git \
+ bash-completion \
+ build-essential 
+
+RUN sudo sh \
+    -c 'echo "deb http://packages.ros.org/ros/ubuntu `lsb_release -sc` main" \
+        > /etc/apt/sources.list.d/ros-latest.list'
+RUN wget http://packages.ros.org/ros.key -O - | sudo apt-key add -
+RUN sudo apt-get update
+RUN sudo apt-get install -y python3-catkin-tools && rm -rf /var/lib/apt/lists/*
+
+# Now create the same user as the host itself
+
+RUN addgroup --gid ${GID} ros; exit 0 
+
+RUN adduser --gecos "ROS User" --disabled-password --uid ${UID} --gid ${GID} robot-user; exit 0
+RUN usermod -a -G dialout robot-user; exit 0
+ADD config/99_aptget /etc/sudoers.d/99_aptget
+RUN chmod 0440 /etc/sudoers.d/99_aptget && chown root:root /etc/sudoers.d/99_aptget
+
+
+# Choose to run as user
+ENV USER robot-user
+USER robot-user 
+# Change HOME environment variable
+ENV HOME /home/${USER} 
+# workspace setup
+RUN mkdir -p ${HOME}/ros/src
+
+# WORKDIR ${HOME}/ros/src
+# RUN /bin/bash -c "source /opt/ros/${ROS_DISTRO}/setup.bash; catkin_init_workspace"; exit 0
+# WORKDIR ${HOME}/ros
+# RUN /bin/bash -c "source /opt/ros/${ROS_DISTRO}/setup.bash; catkin_make"
+
+# inf reload error
+
+# set up environment
+# COPY config/update_bashrc /sbin/update_bashrc
+# RUN sudo chmod +x /sbin/update_bashrc ; sudo chown robot-user /sbin/update_bashrc ; sync ; /bin/bash -c /sbin/update_bashrc ; sudo rm /sbin/update_bashrc
+# # Change entrypoint to source ~/.bashrc and start in ~
+# COPY config/entrypoint.sh /ros_entrypoint.sh
+# RUN sudo chmod +x /ros_entrypoint.sh ; sudo chown robot-user /ros_entrypoint.sh ;
+
+# inf reload error
+
+
+
+
+
+# # copy
+# RUN mkdir ./ros
+# COPY ../ros ./ros
+# # build
+# WORKDIR /ros
+# RUN catkin_make
+# RUN source devel/setup.bash
+# RUN roslaunch abot_description display_movement.launch
+
+# COPY ./entrypoint.sh /
+# ENTRYPOINT [ "/entrypoint.sh" ]
+
+# Clean image
+RUN sudo apt-get clean && sudo rm -rf /var/lib/apt/lists/* 
+# ENTRYPOINT ["/ros_entrypoint.sh"]
+# CMD ["bash"]

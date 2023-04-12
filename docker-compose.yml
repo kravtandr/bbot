@@ -1,0 +1,112 @@
+version: '2'
+
+networks:
+  ros:
+    driver: bridge
+
+
+# services:
+#   ros-master:
+#     build:
+#        dockerfile: Dockerfile.rosmaster
+#        context: .
+#     # command: stdbuf -o L roscore
+#     networks:
+#       - ros
+#     ports:
+#       - "11311:11311"
+#     restart: unless-stopped
+
+
+services:
+  ros-master:
+    image: ros:noetic-ros-core
+    command: stdbuf -o L roscore
+    # command: stdbuf -o L cd ros && source devel/setup.bash && roslaunch abot_description display_movement.launch
+    networks:
+      - ros
+    volumes:
+      - /home/kravtandr/ros:/home/robot-user/ros
+      - ros-data:/ros-data
+    ports:
+      - "11311:11311"
+    restart: unless-stopped
+
+  # ros-master:
+  #   image: ros:noetic-ros-core
+  #   command: stdbuf -o L roscore
+  #   volumes:
+  #     - /home/kravtandr/ros:/home/robot-user/ros
+  #     - /home/kravtandr/ros:/ROS
+  #   environment:
+  #     - "ROS_MASTER_URI=http://ros-master:11311"
+  #     - "ROS_HOSTNAME=robot-user"
+  #     # - "ROS_IP=192.168.1.44"
+  #   networks:
+  #     - ros
+  #   ports:
+  #     - "11311:11311"
+  #   restart: unless-stopped
+
+
+  listener:
+    image: ros:noetic-ros-core
+    depends_on:
+      - ros-master
+    environment:
+      - "ROS_MASTER_URI=http://ros-master:11311"
+    command:
+      stdbuf -o L rostopic echo /chatter && stdbuf -o L rostopic list
+    networks:
+      - ros
+    restart: unless-stopped
+
+
+  talker:
+    image: ros:noetic-ros-core
+    depends_on:
+      - ros-master
+    environment:
+      - "ROS_MASTER_URI=http://ros-master:11311"
+      # - "ROS_HOSTNAME=robot-user"
+      # - "ROS_IP=192.168.1.49"
+    command: stdbuf -o L rostopic pub /chatter std_msgs/String "hello" -r 1
+    networks:
+      - ros
+    restart: unless-stopped
+volumes:
+  ros-data:
+
+  # listener:
+  #   image: ros:noetic-ros-core
+  #   depends_on:
+  #     - ros-master
+  #   environment:
+  #     - "ROS_MASTER_URI=http://ros-master:11311"
+  #   command: stdbuf -o L rostopic echo /chatter
+  #   networks:
+  #     - ros
+  #   restart: unless-stopped
+#  viz:
+#    image: osrf/ros:kinetic-desktop-full
+#    container_name: ros_visualizer
+#    depends_on:
+#      - ros-master
+#    networks:
+#      - ros
+#    environment:
+#      - "ROS_MASTER_URI=http://ros-master:11311"
+#      - "NVIDIA_DRIVER_CAPABILITIES=all"
+#      - "DISPLAY"
+#      - "QT_X11_NO_MITSHM=1" #fix some QT bugs #share your user to the container in order to access your x11
+#    user: 1000:1000 #adapt as needed!
+#    volumes:  #share your x11 socket and permissions to the container
+#      - /tmp/.X11-unix:/tmp/.X11-unix:rw
+#      - /etc/group:/etc/group:ro
+#      - /etc/passwd:/etc/passwd:ro
+#      - /etc/shadow:/etc/shadow:ro
+#      - /etc/sudoers:/etc/sudoers:ro
+#      - /etc/sudoers.d:/etc/sudoers.d:ro
+#      - /home/kravtandr:/home/kravtandr:rw #share your home with write permissions
+#    restart: unless-stopped
+#    command: rqt

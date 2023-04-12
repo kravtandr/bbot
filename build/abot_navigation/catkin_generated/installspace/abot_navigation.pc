@@ -1,4 +1,4 @@
-prefix=/home/parallels/ros/install
+prefix=/home/kravtandr/ros/install
 
 Name: abot_navigation
 Description: Description of abot_navigation
