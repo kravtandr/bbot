@@ -1,4 +1,4 @@
-prefix=/home/parallels/ros/devel
+prefix=/home/kravtandr/ros/devel
 
 Name: abot_slam
 Description: Description of abot_slam

@@ -7,4 +7,5 @@
 # new environment variables
 
 # modified environment variables
-export PWD='/home/parallels/ros/build'
+export PWD='/home/kravtandr/ros/build'
+export ROS_PACKAGE_PATH='/home/parallels/ros/src:/home/kravtandr/ros/src:/opt/ros/noetic/share'

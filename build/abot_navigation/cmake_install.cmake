@@ -1,8 +1,8 @@
-# Install script for directory: /home/parallels/ros/src/abot_navigation
+# Install script for directory: /home/kravtandr/ros/src/abot_navigation
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/parallels/ros/install")
+  set(CMAKE_INSTALL_PREFIX "/home/kravtandr/ros/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -38,17 +38,17 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/parallels/ros/build/abot_navigation/catkin_generated/installspace/abot_navigation.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/kravtandr/ros/build/abot_navigation/catkin_generated/installspace/abot_navigation.pc")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/abot_navigation/cmake" TYPE FILE FILES
-    "/home/parallels/ros/build/abot_navigation/catkin_generated/installspace/abot_navigationConfig.cmake"
-    "/home/parallels/ros/build/abot_navigation/catkin_generated/installspace/abot_navigationConfig-version.cmake"
+    "/home/kravtandr/ros/build/abot_navigation/catkin_generated/installspace/abot_navigationConfig.cmake"
+    "/home/kravtandr/ros/build/abot_navigation/catkin_generated/installspace/abot_navigationConfig-version.cmake"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/abot_navigation" TYPE FILE FILES "/home/parallels/ros/src/abot_navigation/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/abot_navigation" TYPE FILE FILES "/home/kravtandr/ros/src/abot_navigation/package.xml")
 endif()
 

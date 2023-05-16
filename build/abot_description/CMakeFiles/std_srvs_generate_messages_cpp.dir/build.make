@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/parallels/ros/src
+CMAKE_SOURCE_DIR = /home/kravtandr/ros/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/parallels/ros/build
+CMAKE_BINARY_DIR = /home/kravtandr/ros/build
 
 # Utility rule file for std_srvs_generate_messages_cpp.
 
@@ -63,10 +63,10 @@ abot_description/CMakeFiles/std_srvs_generate_messages_cpp.dir/build: std_srvs_g
 .PHONY : abot_description/CMakeFiles/std_srvs_generate_messages_cpp.dir/build
 
 abot_description/CMakeFiles/std_srvs_generate_messages_cpp.dir/clean:
-	cd /home/parallels/ros/build/abot_description && $(CMAKE_COMMAND) -P CMakeFiles/std_srvs_generate_messages_cpp.dir/cmake_clean.cmake
+	cd /home/kravtandr/ros/build/abot_description && $(CMAKE_COMMAND) -P CMakeFiles/std_srvs_generate_messages_cpp.dir/cmake_clean.cmake
 .PHONY : abot_description/CMakeFiles/std_srvs_generate_messages_cpp.dir/clean
 
 abot_description/CMakeFiles/std_srvs_generate_messages_cpp.dir/depend:
-	cd /home/parallels/ros/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/parallels/ros/src /home/parallels/ros/src/abot_description /home/parallels/ros/build /home/parallels/ros/build/abot_description /home/parallels/ros/build/abot_description/CMakeFiles/std_srvs_generate_messages_cpp.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/kravtandr/ros/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/kravtandr/ros/src /home/kravtandr/ros/src/abot_description /home/kravtandr/ros/build /home/kravtandr/ros/build/abot_description /home/kravtandr/ros/build/abot_description/CMakeFiles/std_srvs_generate_messages_cpp.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : abot_description/CMakeFiles/std_srvs_generate_messages_cpp.dir/depend
 

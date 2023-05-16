@@ -6,7 +6,6 @@ Panels:
       Expanded:
         - /Global Options1
         - /TF1/Frames1
-        - /TF1/Tree1
         - /LaserScan1
       Splitter Ratio: 0.5
     Tree Height: 799

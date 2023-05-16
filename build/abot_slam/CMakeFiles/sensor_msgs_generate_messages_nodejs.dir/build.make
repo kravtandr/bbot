@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/parallels/ros/src
+CMAKE_SOURCE_DIR = /home/kravtandr/ros/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/parallels/ros/build
+CMAKE_BINARY_DIR = /home/kravtandr/ros/build
 
 # Utility rule file for sensor_msgs_generate_messages_nodejs.
 
@@ -63,10 +63,10 @@ abot_slam/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/build: sensor_msgs
 .PHONY : abot_slam/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/build
 
 abot_slam/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/clean:
-	cd /home/parallels/ros/build/abot_slam && $(CMAKE_COMMAND) -P CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/cmake_clean.cmake
+	cd /home/kravtandr/ros/build/abot_slam && $(CMAKE_COMMAND) -P CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/cmake_clean.cmake
 .PHONY : abot_slam/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/clean
 
 abot_slam/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/depend:
-	cd /home/parallels/ros/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/parallels/ros/src /home/parallels/ros/src/abot_slam /home/parallels/ros/build /home/parallels/ros/build/abot_slam /home/parallels/ros/build/abot_slam/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/kravtandr/ros/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/kravtandr/ros/src /home/kravtandr/ros/src/abot_slam /home/kravtandr/ros/build /home/kravtandr/ros/build/abot_slam /home/kravtandr/ros/build/abot_slam/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : abot_slam/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/depend
 
