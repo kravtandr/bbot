@@ -17,7 +17,7 @@
 	<arg name="rule" default="commands" />  -->
 
 	<!-- Pocketsphinx Abot params -->
-	<arg name="hmm" default="$(find abot_speech_to_text)/model/zero_ru_cont_8k_v3/zero_ru.cd_cont_4000" />
+	<!-- <arg name="hmm" default="$(find abot_speech_to_text)/model/zero_ru_cont_8k_v3/zero_ru.cd_cont_4000" />
 	<arg name="dict" default= "$(find abot_speech_to_text)/config/abot_dictionary.dic" />
 	<arg name="kws" default="$(find abot_speech_to_text)/config/abot_kwslist.kwslist" />
 	<arg name="gram" default="$(find abot_speech_to_text)/config/abot_gram" />
@@ -36,7 +36,7 @@
 		<param name="hmm" value="$(arg hmm)" />
 		<param name="dict" value="$(arg dict)" />
 		<param name="kws" value="$(arg kws)" />
-	</node>
+	</node> -->
 
 	<node name="audio_capture" pkg="audio_capture" type="audio_capture" output="screen" >
 		<param name="bitrate" value="$(arg bitrate)" />
