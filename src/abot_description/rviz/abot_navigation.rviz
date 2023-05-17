@@ -144,6 +144,8 @@ Visualization Manager:
           Value: true
         right_wheel:
           Value: true
+        caster_wheel:
+          Value: true
       Marker Alpha: 1
       Marker Scale: 0.10000000149011612
       Name: TF
@@ -160,6 +162,9 @@ Visualization Manager:
                 abot_base:
                   abot_lidar:
                     {}
+                  caster_wheel:
+                    abot_caster_wheel:
+                      {}
                   left_wheel:
                     abot_left_wheel:
                       {}
