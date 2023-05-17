@@ -3,11 +3,10 @@
 
 import rospy
 import pandas as pd
+import time
 from std_msgs.msg import String, Empty
 from audio_common_msgs.msg import AudioData
 from pocketsphinx import Decoder, Jsgf
-
-coords = pd.read_csv("/home/anya/abot/ros/src/abot_sound/abot_speech_to_text/scripts/coordinates.csv")
 
 class ASRControl(object):
 	def __init__(self):
@@ -20,6 +19,7 @@ class ASRControl(object):
 		self._gram = rospy.get_param('~gram')
 		self._rule = rospy.get_param('~rule')
 		self._in_speech_bf = False
+		self._command = None
 		self.startRecognizer()
 
 	def startRecognizer(self):
@@ -46,14 +46,16 @@ class ASRControl(object):
 				self._decoder.end_utt()
 				if self._decoder.hyp() is not None:
 					msg = self._decoder.hyp().hypstr
-					if coords[coords['name'] == msg].empty:
-						msg_id = 'none'
-					else:
-						msg_id = coords[coords['name'] == msg].iloc[0]['id']
 					rospy.logwarn('ASR control node: OUTPUT - \"' + msg + '\"')
-					rospy.logwarn('ASR control node: OUTPUT - \"' + msg_id + '\"')
-					self._grammar_data_pub.publish(msg_id)
+					if self._command:
+						self._grammar_data_pub.publish(msg)
+						self._command = None
+					else:
+						self._command = msg
 				else:
+					if self._command:
+						self._grammar_data_pub.publish(self._command)
+						self._command = None
 					rospy.logwarn("ASR control node: No possible grammar found")
 					msg = Empty()
 					self._grammar_not_found_pub.publish(msg)
