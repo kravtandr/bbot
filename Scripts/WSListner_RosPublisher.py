@@ -36,12 +36,18 @@
 ## Simple talker demo that listens to std_msgs/Strings published
 ## to the 'chatter' topic
 
+import pyrosenv
+import yaml
 import rospy
 import json
 import websocket
-from turtlesim.msg import Pose
 from std_msgs.msg import Float64
+from sensor_msgs.msg import LaserScan
 from types import SimpleNamespace
+from sensor_msgs.msg import Joy
+from geometry_msgs.msg import Twist
+from nav_msgs.msg import Path
+
 
 # ws = websocket.WebSocket()
 # ws.connect("ws://localhost:8000/ws/robot/testroom/")
@@ -74,10 +80,12 @@ def on_message(ws, message):
     rate.sleep()
 
 def forward():
-    pubr = rospy.Publisher('/abot/right_wheel/pwm', Float64, queue_size=10)
-    publ = rospy.Publisher('/abot/left_wheel/pwm', Float64, queue_size=10)
-    pubr.publish(-5.0)
-    publ.publish(-5.0)
+    twist = Twist
+    pubr = rospy.Publisher('/mobile_abot/cmd_vel', Twist, queue_size=10)
+    #publ = rospy.Publisher('/abot/left_wheel/pwm', Float64, queue_size=10)
+    twist.linear.x = 1.0
+    pubr.publish(twist)
+    #publ.publish(-5.0)
 def backward():
     pubr = rospy.Publisher('/abot/right_wheel/pwm', Float64, queue_size=10)
     publ = rospy.Publisher('/abot/left_wheel/pwm', Float64, queue_size=10)
@@ -109,10 +117,40 @@ def on_close(ws, close_status_code, close_msg):
 def on_open(ws):
     print("Opened connection")
 
+def msg2json(msg):
+   ''' Convert a ROS message to JSON format'''
+   y = yaml.load(str(msg))
+   return json.dumps(y,indent=4)
+
+def callback(data):
+    if type(data) == Joy:
+        print("Joy")
+        message = json.dumps({ 'Joy' : msg2json(data) })
+    elif type(data) == Twist:
+        print("Twist")
+        message = json.dumps({ 'Twist' : msg2json(data) })
+    elif type(data) == LaserScan:
+        print("LaserScan")
+        message = json.dumps({ 'LaserScan' : msg2json(data) })
+    elif type(data) == Path:
+        print("Path")
+        message = json.dumps({ 'Path' : msg2json(data) })
+        
+
+    ws.send('%s' % message)
+
 if __name__ == "__main__":
     print("START WS LISTNER")
     rospy.init_node('talker', anonymous=True)
+    #rospy.init_node('listener', anonymous=True)
     # websocket.enableTrace(True)
+    # rospy.Subscriber("/joy", Joy, callback)
+    # rospy.Subscriber("/scan", LaserScan, callback)
+    # rospy.Subscriber("/mobile_abot/cmd_vel", Twist, callback)
+    # rospy.Subscriber("/move_base/DWAPlannerROS/global_plan", Path, callback)
+    
+    
+
     ws = websocket.WebSocketApp("ws://127.0.0.1:8080/ws/robot/testroom/",
                               on_open=on_open,
                               on_message=on_message,

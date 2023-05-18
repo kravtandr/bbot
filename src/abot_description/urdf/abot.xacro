@@ -11,19 +11,19 @@
 	<!-- abot_base -->
 	<link name="abot_base">
 		<inertial>
-			<origin xyz="-0.017258 -0.00044491 0.079113" rpy="0 0 0"/>
+			<origin xyz="-0.017258 -0.00044491 0.079113" rpy="0 0 ${PI}"/>
 			<mass value="0.71798"/>
 			<inertia ixx="0.00077488" ixy="-3.248E-06" ixz="-9.2329E-06" iyy="0.00075836" iyz="2.2456E-06" izz="0.0014158"/>
 		</inertial>
 		<visual>
-			<origin xyz="0 0 0" rpy="0 0 0" />
+			<origin xyz="0 0 0" rpy="0 0 ${PI}" />
 			<geometry>
 				<mesh filename="package://abot_description/meshes/abot_base.STL" />
 			</geometry>
 			<material name="White" />
 		</visual>
 		<collision>
-			<origin xyz="0 0 0" rpy="0 0 0" />
+			<origin xyz="0 0 0" rpy="0 0 ${PI}" />
 			<geometry>
 				<mesh filename="package://abot_description/meshes/abot_base.STL" />
 			</geometry>
@@ -32,7 +32,7 @@
 	<!-- base_link -->
 	<link name="base_link">
 		<visual>
-			<origin xyz="0 0 0" rpy="0 0 0" />
+			<origin xyz="0 0 0" rpy="0 0 ${PI}" />
 			<geometry>
 				<sphere radius="0.001" />
 			</geometry>
@@ -46,7 +46,7 @@
 	<!-- base_footprint -->
 	<link name="base_footprint">
 	<visual>
-		<origin xyz="0 0 0" rpy="0 0 0" />
+		<origin xyz="0 0 0" rpy="0 0 ${PI}" />
 		<geometry>
 			<cylinder length="0.001" radius="0.100" />
 		</geometry>
@@ -54,7 +54,7 @@
 	</visual>
 	</link>
 	<joint name="base_footprint_to_base_link" type="fixed">
-		<origin xyz="0 0 ${clearance}" rpy="0 0 0" />
+		<origin xyz="0 0 ${clearance}" rpy="0 0 ${PI}" />
 		<parent link="base_footprint" />
 		<child link="base_link" />
 	</joint>
