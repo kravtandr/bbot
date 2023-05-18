@@ -1,6 +1,7 @@
 <launch>
 	<param name="robot_description" command="$(find xacro)/xacro '$(find abot_description)/urdf/abot.xacro' --inorder"/>
 	<node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="false" output="screen" />
+	<node name="bbot_joy" pkg="joy" type="joy_node"/>
 
 	<include file="$(find abot_base)/launch/abot_base.launch" />
 	<include file="$(find abot_control)/launch/abot_control.launch" />
