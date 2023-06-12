@@ -74,28 +74,28 @@ def on_message(ws, message):
     rate.sleep()
 
 def forward():
-    pubr = rospy.Publisher('/abot/right_wheel/pwm', Float64, queue_size=10)
-    publ = rospy.Publisher('/abot/left_wheel/pwm', Float64, queue_size=10)
+    pubr = rospy.Publisher('/bbot/right_wheel/pwm', Float64, queue_size=10)
+    publ = rospy.Publisher('/bbot/left_wheel/pwm', Float64, queue_size=10)
     pubr.publish(-5.0)
     publ.publish(-5.0)
 def backward():
-    pubr = rospy.Publisher('/abot/right_wheel/pwm', Float64, queue_size=10)
-    publ = rospy.Publisher('/abot/left_wheel/pwm', Float64, queue_size=10)
+    pubr = rospy.Publisher('/bbot/right_wheel/pwm', Float64, queue_size=10)
+    publ = rospy.Publisher('/bbot/left_wheel/pwm', Float64, queue_size=10)
     pubr.publish(2.0)
     publ.publish(2.0)
 def left():
-    pubr = rospy.Publisher('/abot/right_wheel/pwm', Float64, queue_size=10)
-    publ = rospy.Publisher('/abot/left_wheel/pwm', Float64, queue_size=10)
+    pubr = rospy.Publisher('/bbot/right_wheel/pwm', Float64, queue_size=10)
+    publ = rospy.Publisher('/bbot/left_wheel/pwm', Float64, queue_size=10)
     pubr.publish(2.0)
     publ.publish(-2.0)
 def right():
-    pubr = rospy.Publisher('/abot/right_wheel/pwm', Float64, queue_size=10)
-    publ = rospy.Publisher('/abot/left_wheel/pwm', Float64, queue_size=10)
+    pubr = rospy.Publisher('/bbot/right_wheel/pwm', Float64, queue_size=10)
+    publ = rospy.Publisher('/bbot/left_wheel/pwm', Float64, queue_size=10)
     pubr.publish(-2.0)
     publ.publish(2.0)
 def stop():
-    pubr = rospy.Publisher('/abot/right_wheel/pwm', Float64, queue_size=10)
-    publ = rospy.Publisher('/abot/left_wheel/pwm', Float64, queue_size=10)
+    pubr = rospy.Publisher('/bbot/right_wheel/pwm', Float64, queue_size=10)
+    publ = rospy.Publisher('/bbot/left_wheel/pwm', Float64, queue_size=10)
     pubr.publish(0.0)
     publ.publish(0.0)
 

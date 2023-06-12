@@ -1,8 +1,0 @@
-prefix=/home/parallels/ros/install
-
-Name: abot_description
-Description: Description of abot_description
-Version: 0.0.0
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: 

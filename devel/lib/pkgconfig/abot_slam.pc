@@ -1,7 +1,7 @@
 prefix=/home/parallels/ros/devel
 
-Name: abot_slam
-Description: Description of abot_slam
+Name: bbot_slam
+Description: Description of bbot_slam
 Version: 0.0.0
 Cflags: 
 Libs: -L${prefix}/lib 

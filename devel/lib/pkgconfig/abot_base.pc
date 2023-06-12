@@ -1,7 +1,7 @@
 prefix=/home/parallels/ros/devel
 
-Name: abot_base
-Description: Description of abot_base
+Name: bbot_base
+Description: Description of bbot_base
 Version: 0.0.0
 Cflags: 
 Libs: -L${prefix}/lib 

@@ -1,7 +1,7 @@
 prefix=/home/parallels/ros/devel
 
-Name: abot_speech_to_text
-Description: Description of abot_speech_to_text
+Name: bbot_speech_to_text
+Description: Description of bbot_speech_to_text
 Version: 0.0.0
 Cflags: 
 Libs: -L${prefix}/lib 
