@@ -1,5 +1,5 @@
 <launch>
-    <node name="controller" pkg="pid" type="controller" ns="/abot/left_wheel" output="screen" >
+    <node name="controller" pkg="pid" type="controller" ns="/bbot/left_wheel" output="screen" >
         <param name="node_name" value="left_wheel_pid" />
         <param name="Kp" value="-0.95" />
         <param name="Ki" value="-2.0" />
@@ -9,12 +9,12 @@
         <param name="windup_limit" value="10.23" />
         <param name="max_loop_frequency" value="100.0" />
         <param name="min_loop_frequency" value="100.0" />
-        <remap from="/abot/left_wheel/setpoint" to="/abot/left_wheel/target_velocity" />
-        <remap from="/abot/left_wheel/state" to="/abot/left_wheel/current_velocity" />
-        <remap from="/abot/left_wheel/control_effort" to="/abot/left_wheel/pwm" />
+        <remap from="/bbot/left_wheel/setpoint" to="/bbot/left_wheel/target_velocity" />
+        <remap from="/bbot/left_wheel/state" to="/bbot/left_wheel/current_velocity" />
+        <remap from="/bbot/left_wheel/control_effort" to="/bbot/left_wheel/pwm" />
     </node>
 
-    <node name="controller" pkg="pid" type="controller" ns="/abot/right_wheel" output="screen" >
+    <node name="controller" pkg="pid" type="controller" ns="/bbot/right_wheel" output="screen" >
         <param name="node_name" value="right_wheel_pid" />
         <param name="Kp" value="-0.95" />
         <param name="Ki" value="-2.0" />
@@ -24,8 +24,8 @@
         <param name="windup_limit" value="10.23" />
         <param name="max_loop_frequency" value="100.0" />
         <param name="min_loop_frequency" value="100.0" />
-        <remap from="/abot/right_wheel/setpoint" to="/abot/right_wheel/target_velocity" />
-        <remap from="/abot/right_wheel/state" to="/abot/right_wheel/current_velocity" />
-        <remap from="/abot/right_wheel/control_effort" to="/abot/right_wheel/pwm" />
+        <remap from="/bbot/right_wheel/setpoint" to="/bbot/right_wheel/target_velocity" />
+        <remap from="/bbot/right_wheel/state" to="/bbot/right_wheel/current_velocity" />
+        <remap from="/bbot/right_wheel/control_effort" to="/bbot/right_wheel/pwm" />
     </node>
 </launch>
