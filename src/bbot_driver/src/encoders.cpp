@@ -42,10 +42,10 @@ private:
 EncodersPair::EncodersPair(double update_rate)
 	: encoder_left(ENCODER_1_PIN_A, ENCODER_1_PIN_B, &EncoderWiringPiISR::encoderISR1, &EncoderWiringPiISR::encoderPosition1)
 	, encoder_right(ENCODER_2_PIN_A, ENCODER_2_PIN_B, &EncoderWiringPiISR::encoderISR2, &EncoderWiringPiISR::encoderPosition2) {
-	left_wheel_angle_pub = node.advertise<std_msgs::Float64>("/abot/left_wheel/angle", 1);
-	right_wheel_angle_pub = node.advertise<std_msgs::Float64>("/abot/right_wheel/angle", 1);
-	left_wheel_velocity_pub = node.advertise<std_msgs::Float64>("/abot/left_wheel/current_velocity", 1);
-	right_wheel_velocity_pub = node.advertise<std_msgs::Float64>("/abot/right_wheel/current_velocity", 1);
+	left_wheel_angle_pub = node.advertise<std_msgs::Float64>("/bbot/left_wheel/angle", 1);
+	right_wheel_angle_pub = node.advertise<std_msgs::Float64>("/bbot/right_wheel/angle", 1);
+	left_wheel_velocity_pub = node.advertise<std_msgs::Float64>("/bbot/left_wheel/current_velocity", 1);
+	right_wheel_velocity_pub = node.advertise<std_msgs::Float64>("/bbot/right_wheel/current_velocity", 1);
 
 	encoders_timer = node.createTimer(ros::Duration(update_rate), &EncodersPair::encodersCallback, this);
 }
